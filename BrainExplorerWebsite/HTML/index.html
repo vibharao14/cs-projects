@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brain Explorer</title>
+    <link rel = "stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+    <body>
+        
+        <h1 style="font-weight: bold;">Brain Explorer</h1>
+        <p>Explore what happens in your brain: </p>
+        <div class="dropdown">
+            <button class = "dropbtn">Choose a Scenario </button>
+            <div class = "dropdown-content">
+                <button id = "math">Solving a math problem</button>
+                <button id="noise">You hear a loud noise at night</button>
+                <button id="cold">You're shivering in a winter storm</button>   
+            </div>
+        </div>
+        <div class = "result">
+            <img id = "brainImage" src="">
+            <h2 id = "brainRegion"></h2>
+            <p id="explanation"></p>
+        </div>
+    </body>
+</html>
