@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brain Explorer</title>
+    <link rel = "stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Brain Explorer</a></li>
+                <li><a href = "brainStories.html">Brain Stories</a></li>
+            </ul>
+        </nav>
+        <div class = "mainContent">
+            <h1>Brain Stories</h1>
+            <p>Run through scenarios: </p>
+            <div class="scenarioOptions">
+                <!--Maybe use JS to dynamically add buttons horizontally for scenario options-->  
+            </div>
+            <h3 id="currentLine">Current Line of the story</h3>
+            <div class="choices">
+                <!--Maybe use JS to dynamically add buttons to make choices to influence the next line of the story-->
+            </div>
+            <p id="storyResult"> <!--Change text acccording to user choice--></p>
+            <p id="brainExplain"> <!--Change text acccording to user choice. Brain explanation of storyResult--></p>
+            <button id="next"> <!--Updates currentLine and choices. Clears storyResult and BrainExplain--></button>
+        </div>
+    </body>
+</html>

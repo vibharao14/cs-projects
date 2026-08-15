@@ -4,6 +4,44 @@ p{
     font-size: 20px;
     font-style: italic;
 }
+ul{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #b52362;
+  display: flex;
+  background-color: #df77a4;
+}
+ul li a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+}
+
+ul li a.active {
+  background-color:#b52362;
+}
+ul li a:hover:not(.active) {
+  background-color: rgb(238, 201, 188);
+}
+body { 
+  background-color: #4059ad;
+  padding-top: 60px;
+  margin: 0;
+}
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
 .dropbtn{
     color: white;
     background-color: coral;
