@@ -6,28 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Brain Explorer</title>
     <link rel = "stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <script src="./stories.js" defer></script>
 </head>
     <body>
         <nav>
             <ul>
                 <li><a href="index.html"> Brain Explorer</a></li>
-                <li><a href = "brainStories.html">Brain Stories</a></li>
+                <li><a class="active" href = "brainStories.html">Brain Stories</a></li>
             </ul>
         </nav>
         <div class = "mainContent">
             <h1>Brain Stories</h1>
             <p>Run through scenarios: </p>
             <div class="scenarioOptions">
-                <!--Maybe use JS to dynamically add buttons horizontally for scenario options-->  
+                <!--Maybe use JS to dynamically add buttons horizontally for scenario options-->
+                <button>Restaurant Day</button>
+                <button>The Thunderstorm</button>  
             </div>
-            <h3 id="currentLine">Current Line of the story</h3>
+            <h3 id="currentLine">After a long day at work, you want to pick some food up instead of cooking at home.</h3>
             <div class="choices">
                 <!--Maybe use JS to dynamically add buttons to make choices to influence the next line of the story-->
+                <button id="option1">Pick the cheaper fast-food place to grab a quick meal to go. No utensils provided. You have to do your own dishes.</button>
+                <button id="option2">Pick the equally delicious but more nutritious expensive restaurant to dine in. You don't have to do anything but eat and pay.</button>
             </div>
             <p id="storyResult"> <!--Change text acccording to user choice--></p>
             <p id="brainExplain"> <!--Change text acccording to user choice. Brain explanation of storyResult--></p>
-            <button id="next"> <!--Updates currentLine and choices. Clears storyResult and BrainExplain--></button>
+            <button id="next"> Next<!--Updates currentLine and choices. Clears storyResult and BrainExplain--></button>
         </div>
     </body>
 </html>
