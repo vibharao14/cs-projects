@@ -3,6 +3,19 @@ const opt2Button = document.getElementById("option2");
 const storyResult = document.getElementById("storyResult");
 const currentLine = document.getElementById("currentLine");
 const brainExplain = document.getElementById("brainExplain");
+let step = 0;
+const storyStepsOpt2 = [
+    ["Pick the cheaper fast-food place to grab a quick meal to go. No utensils provided. You have to do your own dishes.", "Pick the equally delicious but more nutritious expensive restaurant to dine in. You don't have to do anything but eat and pay."], 
+    ["You tell the waiter that everything's good. You take a bite to prove it.", "You tell the waiter that this isn't what you ordered."]
+];
+const storyStep = {
+    line: "",
+    choices: [],
+    choice1result: "",
+    choice2result: "",
+    choice1BrainExplain: "",
+    choice2BrainExplain: "",
+};
 const nextButton = document.getElementById("next");
 opt1Button.addEventListener("click", function(){
     storyResult.textContent = "idk man";
@@ -14,9 +27,10 @@ opt2Button.addEventListener("click", function(){
 });
 
 nextButton.addEventListener("click", function(){
+    step +=1;
     storyResult.textContent = "";
     brainExplain.textContent = "";
-    opt1Button.textContent = "You tell the waiter that everything's good. You take a bite to prove it.";
-    opt2Button.textContent = "You tell the waiter that this isn't what you ordered.";
+    opt1Button.textContent = storyStepsOpt2[step][0];
+    opt2Button.textContent = storyStepsOpt2[step][1];
     currentLine.textContent = "You order your food, and after twenty agonizing minutes, it arrives at your table. But wait...this isn't what you ordered. Instead of your favorite food, it's your least favorite food! A waiter comes over to ask how everything's going. ";
 });
