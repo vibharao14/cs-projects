@@ -8,14 +8,35 @@ const storyStepsOpt2 = [
     ["Pick the cheaper fast-food place to grab a quick meal to go. No utensils provided. You have to do your own dishes.", "Pick the equally delicious but more nutritious expensive restaurant to dine in. You don't have to do anything but eat and pay."], 
     ["You tell the waiter that everything's good. You take a bite to prove it.", "You tell the waiter that this isn't what you ordered."]
 ];
-const storyStep = {
-    line: "",
-    choices: [],
-    choice1result: "",
-    choice2result: "",
-    choice1BrainExplain: "",
-    choice2BrainExplain: "",
-};
+const storySteps = [
+    {
+        id: "start",
+        line: "",
+        choices: [{
+            text: "choice1",
+            nextStepID: "cheapRestaurant",
+            brainExplain: ""
+        }, {
+            text: "choice2",
+            nextStepID: "exepnsiveRestaurant",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "cheapRestaurant",
+        line: "",
+        choices: [{
+            text: "choice1",
+            nextStepID: "requestNewOrder",
+            brainExplain: ""
+        }, {
+            text: "choice2",
+            nextStepID: "goHome",
+            brainExplain: ""
+        }],     
+    },
+
+];
 const nextButton = document.getElementById("next");
 opt1Button.addEventListener("click", function(){
     storyResult.textContent = "idk man";
