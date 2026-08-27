@@ -3,55 +3,146 @@ const opt2Button = document.getElementById("option2");
 const storyResult = document.getElementById("storyResult");
 const currentLine = document.getElementById("currentLine");
 const brainExplain = document.getElementById("brainExplain");
-let step = 0;
-const storyStepsOpt2 = [
-    ["Pick the cheaper fast-food place to grab a quick meal to go. No utensils provided. You have to do your own dishes.", "Pick the equally delicious but more nutritious expensive restaurant to dine in. You don't have to do anything but eat and pay."], 
-    ["You tell the waiter that everything's good. You take a bite to prove it.", "You tell the waiter that this isn't what you ordered."]
-];
+
+
 const storySteps = [
     {
         id: "start",
-        line: "",
+        line: "After a long day at work, you want to pick some food up instead of cooking at home.",
         choices: [{
-            text: "choice1",
+            text: "Pick the cheaper fast-food place to grab a quick meal to go. No utensils provided. You have to do your own dishes.",
             nextStepID: "cheapRestaurant",
+            storyResult: "You chose the cheaper fast-food place. You get to enjoy some delicious, inexpensive food at home.",
             brainExplain: ""
         }, {
-            text: "choice2",
-            nextStepID: "exepnsiveRestaurant",
+            text: "Pick the equally delicious but more nutritious expensive restaurant to dine in. You don't have to do anything but eat and pay.",
+            nextStepID: "expensiveRestaurant",
+            storyResult: "You chose the expensive restaurant. You get to enjoy some delicious, nutritious food without the added burden of extra chores",
             brainExplain: ""
         }],     
     },
     {
         id: "cheapRestaurant",
+        line: "You order your food, and after five agonizing minutes, the worker hands it to you at the drive-thru. But wait...this isn't what you ordered. Instead of your favorite food, it's your least favorite food! The worker shares that it's her first day on the job and asks if she did a good job.",
+        choices: [{
+            text: "Tell the worker that this isn't what you ordered.",
+            nextStepID: "requestNewOrderCheap",
+            storyResult: "You kindly inform the worker that your order was incorrect. She apologizes and hands you the correct order.",
+            brainExplain: "brain stuff about pointing out an incorrect order."
+        }, {
+            text: "Accept your fate.",
+            nextStepID: "goHomeCheap",
+            storyResult: "You tell the worker that everything's good and that she did an amazing job",
+            brainExplain: "brain stuff about accepting the wrong order."
+        }],     
+    },
+    {
+        id: "expensiveRestaurant",
+        line: "You order your food, and after twenty agonizing minutes, it arrives at your table. But wait...this isn't what you ordered. Instead of your favorite food, it's your least favorite food! A waiter comes over to ask how everything's going.",
+        choices: [{
+            text: "Tell the waiter that this isn't what you ordered.",
+            nextStepID: "requestNewOrderExpensive",
+            storyResult: "You kindly inform the worker that your order was incorrect. She apologizes and hands you the correct order.",
+            brainExplain: "brain stuff about pointing out an incorrect order."
+        }, {
+            text: "Accept your fate.",
+            nextStepID: "goHomeExpensive",
+            storyResult: "You tell the waiter that everything's good. You take a bite to prove it.",
+            brainExplain: "brain stuff about accepting the wrong order."
+        }],     
+    },
+
+    {
+        id: "requestNewOrderExpensive",
         line: "",
         choices: [{
-            text: "choice1",
-            nextStepID: "requestNewOrder",
+            text: "",
+            nextStepID: "",
+            storyResult: "",
             brainExplain: ""
         }, {
-            text: "choice2",
-            nextStepID: "goHome",
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "goHomeExpensive",
+        line: "",
+        choices: [{
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }, {
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "requestNewOrderCheap",
+        line: "",
+        choices: [{
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }, {
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "goHomeCheap",
+        line: "",
+        choices: [{
+            text: "",
+            nextStepID: "",
+            storyResult: "",
+            brainExplain: ""
+        }, {
+            text: "",
+            nextStepID: "",
+            storyResult: "",
             brainExplain: ""
         }],     
     },
 
 ];
-const nextButton = document.getElementById("next");
-opt1Button.addEventListener("click", function(){
-    storyResult.textContent = "idk man";
-    brainExplain.textContent = "brain stuff bro";
-});
-opt2Button.addEventListener("click", function(){
-    storyResult.textContent = "You chose the expensive restaurant. You get to enjoy some delicious, nutritious food without the added burden of extra chores.";
-    brainExplain.textContent = "Your prefrontal cortex was involved in weighing the merits of more nutritious food given the higher cost. Your reward and motivation pathways help motivate you to invest more money and time into the dining experience. Your anterior cingulate cortex also was involved in resolving the tension between the two choices. In the end, your brain determined that the delicious, nutritious food was worth the higher cost.";
-});
 
-nextButton.addEventListener("click", function(){
-    step +=1;
+function loadStep(){
+    const currentStep = storySteps.find(step => step.id === currentStepID);
     storyResult.textContent = "";
     brainExplain.textContent = "";
-    opt1Button.textContent = storyStepsOpt2[step][0];
-    opt2Button.textContent = storyStepsOpt2[step][1];
-    currentLine.textContent = "You order your food, and after twenty agonizing minutes, it arrives at your table. But wait...this isn't what you ordered. Instead of your favorite food, it's your least favorite food! A waiter comes over to ask how everything's going. ";
+    opt1Button.textContent = currentStep.choices[0].text;
+    opt2Button.textContent = currentStep.choices[1].text;
+    currentLine.textContent = currentStep.line;
+};
+
+//Initialize the story
+let currentStepID = "start";
+loadStep();
+
+const nextButton = document.getElementById("next");
+opt1Button.addEventListener("click", function(){
+    const currentStep = storySteps.find(step => step.id === currentStepID);
+    storyResult.textContent = currentStep.choices[0].storyResult;
+    brainExplain.textContent = currentStep.choices[0].brainExplain;
+    currentStepID = currentStep.choices[0].nextStepID;
+});
+opt2Button.addEventListener("click", function(){
+    const currentStep = storySteps.find(step => step.id === currentStepID);
+    storyResult.textContent = currentStep.choices[1].storyResult;
+    brainExplain.textContent = currentStep.choices[1].brainExplain;
+    currentStepID = currentStep.choices[1].nextStepID;
+});
+
+
+nextButton.addEventListener("click", function(){
+    loadStep();
 });
