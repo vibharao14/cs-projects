@@ -32,7 +32,7 @@ const storySteps = [
         }, {
             text: "Accept your fate.",
             nextStepID: "goHomeCheap",
-            storyResult: "You tell the worker that everything's good and that she did an amazing job",
+            storyResult: "You tell the worker that everything's good and that she did an amazing job.",
             brainExplain: "brain stuff about accepting the wrong order."
         }],     
     },
@@ -41,7 +41,7 @@ const storySteps = [
         line: "You order your food, and after twenty agonizing minutes, it arrives at your table. But wait...this isn't what you ordered. Instead of your favorite food, it's your least favorite food! A waiter comes over to ask how everything's going.",
         choices: [{
             text: "Tell the waiter that this isn't what you ordered.",
-            nextStepID: "requestNewOrderExpensive",
+            nextStepID: "angryCustomer",
             storyResult: "You kindly inform the worker that your order was incorrect. She apologizes and hands you the correct order.",
             brainExplain: "brain stuff about pointing out an incorrect order."
         }, {
@@ -53,17 +53,32 @@ const storySteps = [
     },
 
     {
-        id: "requestNewOrderExpensive",
-        line: "",
+        id: "angryCustomer",
+        line: "Another patron overheard you asking for the correct order and called you an entitled, rude, stingy customer. They complain that if you're rich enough to eat here, you can tolerate a wrong order.",
         choices: [{
-            text: "",
-            nextStepID: "",
-            storyResult: "",
+            text: "Confront the other patron.",
+            nextStepID: "fightRecovery",
+            storyResult: "You calmly (you think) tell the patron that they're mistaken, that you weren't trying to be rude and simply wanted your correct order. A fistfight commences.",
             brainExplain: ""
         }, {
-            text: "",
-            nextStepID: "",
-            storyResult: "",
+            text: "Ignore the patron",
+            nextStepID: "guiltyDinner",
+            storyResult: "You continue to eat without acknowledging the other patron. Other people stare at you eat, and you feel embarrassed. You didn't mean to cause a scene.",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "fightRecovery",
+        line: "Post-fight, your ego (and a little more of you) is totally bruised. The patron is now doing a victory dance in the corner.",
+        choices: [{
+            text: "Join the dance.",
+            nextStepID: "danceEnding",
+            storyResult: "You calmly (you think) tell the patron that they're mistaken, that you weren't trying to be rude and simply wanted your correct order. A fistfight commences.",
+            brainExplain: ""
+        }, {
+            text: "Go home and sleep.",
+            nextStepID: "bruisedSleepEnding",
+            storyResult: "idk",
             brainExplain: ""
         }],     
     },
@@ -99,7 +114,7 @@ const storySteps = [
     },
     {
         id: "goHomeCheap",
-        line: "",
+        line: "You arrive home, eat your disgusting dinner, and wash the dishes.",
         choices: [{
             text: "",
             nextStepID: "",
