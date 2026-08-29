@@ -47,7 +47,7 @@ const storySteps = [
         }, {
             text: "Accept your fate.",
             nextStepID: "goHomeExpensive",
-            storyResult: "You tell the waiter that everything's good. You take a bite to prove it.",
+            storyResult: "You tell the waiter that everything's good. You take a bite to prove it. You head home feeling no more satiated despite the newfound lightness in your wallet.",
             brainExplain: "brain stuff about accepting the wrong order."
         }],     
     },
@@ -72,23 +72,38 @@ const storySteps = [
         line: "Post-fight, your ego (and a little more of you) is totally bruised. The patron is now doing a victory dance in the corner.",
         choices: [{
             text: "Join the dance.",
-            nextStepID: "danceEnding",
-            storyResult: "You calmly (you think) tell the patron that they're mistaken, that you weren't trying to be rude and simply wanted your correct order. A fistfight commences.",
+            nextStepID: "ending",
+            storyResult: "You realize the patron's got some great moves and decide to join them. They forgive you and you dance together.",
             brainExplain: ""
         }, {
             text: "Go home and sleep.",
-            nextStepID: "bruisedSleepEnding",
-            storyResult: "idk",
+            nextStepID: "ending",
+            storyResult: "The sight of the victory dance is too much for you after that chaotic night. You pack it up and head home for a good night of rest and recovery.",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "ending",
+        line: "The end.",
+        choices: [{
+            text: "You made it.",
+            nextStepID: "ending",
+            storyResult: "",
+            brainExplain: ""
+        }, {
+            text: "Congrats.",
+            nextStepID: "ending",
+            storyResult: "",
             brainExplain: ""
         }],     
     },
     {
         id: "goHomeExpensive",
-        line: "",
+        line: "You decide the rest of the night calls for low-effort relaxation. But before you finally succumb to the night...CRASH! You're jolted awake by an unfamiliar sound coming from your front door.",
         choices: [{
-            text: "",
-            nextStepID: "",
-            storyResult: "",
+            text: "Go to sleep",
+            nextStepID: "checkCam",
+            storyResult: "You decide to check your front doorbell camera to identify the source of the commotion. It's a person holding up a sign reading 'COME TALK TO ME'.",
             brainExplain: ""
         }, {
             text: "",
@@ -148,13 +163,18 @@ opt1Button.addEventListener("click", function(){
     const currentStep = storySteps.find(step => step.id === currentStepID);
     storyResult.textContent = currentStep.choices[0].storyResult;
     brainExplain.textContent = currentStep.choices[0].brainExplain;
-    currentStepID = currentStep.choices[0].nextStepID;
+    if (currentStepID != "ending"){
+        currentStepID = currentStep.choices[0].nextStepID;
+    }
+
 });
 opt2Button.addEventListener("click", function(){
     const currentStep = storySteps.find(step => step.id === currentStepID);
     storyResult.textContent = currentStep.choices[1].storyResult;
     brainExplain.textContent = currentStep.choices[1].brainExplain;
-    currentStepID = currentStep.choices[1].nextStepID;
+    if (currentStepID != "ending"){
+        currentStepID = currentStep.choices[1].nextStepID;
+    }
 });
 
 
