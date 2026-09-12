@@ -159,16 +159,46 @@ const storySteps = [
     },
     {
         id: "requestNewOrderCheap",
-        line: "",
+        line: "You take your correct order home and realize it's way spicier than you expected it to be. Your face starts getting hot and tears fill your eyes. You're unable to bear the heat. ",
         choices: [{
-            text: "",
-            nextStepID: "",
-            storyResult: "",
+            text: "Climb two flights of stairs to get to the basement, where you know you have honey stored on the third shelf.",
+            nextStepID: "basement",
+            storyResult: "After an additional five minutes of pain and fumbling in the dark basement, you finally manage to retrieve the honey and squirt it directly on to your tongue. Relief comes almost instantly.",
             brainExplain: ""
         }, {
-            text: "",
-            nextStepID: "",
-            storyResult: "",
+            text: "Grab one of two white unlabeled containers in front of you that either contain salt or sugar.",
+            nextStepID: "salt",
+            storyResult: "Unfortunately, the white substance you poured onto your tongue was salt, not sugar, as expected. You automatically spit it out and scramble for the sugar in the other container. Relief comes slowly but surely.",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "salt",
+        line: "After your mouth no longer feels like it's burning, you take a long look at the two white, unlabeled containers on the counter. They look totally out of place in your kitchen, where all of the containers fit clearly with your underwater kitchen vibe and are clearly labeled. ",
+        choices: [{
+            text: "Get out your glue, paint, fake corals, and fake seaweed. It's decoration time. ",
+            nextStepID: "ending",
+            storyResult: "You spend the rest of your evening focusing your energy on making sure your containers look like they came straight from Atlantis. You have too much creative energy to let those canvasses remain blank! The perfect fake seaweed to coral ratio is an area where nobody can critique your expertise. Nothing can distract you as you mix those shades of blue. Only when your masterpiece is complete do you allow yourself to go to sleep.",
+            brainExplain: ""
+        }, {
+            text: "Get out your sticker labels and sharpie. ",
+            nextStepID: "ending",
+            storyResult: "You stick those sticker labels right on the containers and use your sharpie to clearly label which container has salt and which has sugar. When you're done, you're able to go to sleep fully assured that you'll never be ambushed during a spice attack ever again..",
+            brainExplain: ""
+        }],     
+    },
+    {
+        id: "basement",
+        line: "After your mouth no longer feels like it's burning, you realize that the basement is an absolute mess! You spot random dusty storage boxes, old board game pieces, and even that missing walkie-talkie your friend gave you for your birthday! ",
+        choices: [{
+            text: "Clean the basement. ",
+            nextStepID: "ending",
+            storyResult: "The dust in the basement is no match for you. After a couple hours of meticulous sweeping, lifting, discarding, and reorganizing, your basement is as good as new. You even uncover a perfectly functional, comfortable couch with a built in TV. It's so comfortable that you go to sleep right there between the cushions instead of making the treacherous trek back upstairs.",
+            brainExplain: ""
+        }, {
+            text: "Try the walkie-talkie. ",
+            nextStepID: "ending",
+            storyResult: "You try saying 'hello' into the walkie-talkie a couple times to no avail. However, that's not surprising since it had been a few months since you and your friend has successfully communicated with them last. However, on the fifth try, a voice finally does respond. But it's not your friend's. It's the worker from the drive-thru, saying that your friend left their walkie-talkie behind and needed to come pick it up. You decide that's a problem for tomorrow.",
             brainExplain: ""
         }],     
     },
@@ -200,6 +230,22 @@ const storySteps = [
             text: "Recommend coping strategies",
             nextStepID: "ending",
             storyResult: "You give the man your favorite tips for dealing with stress and tell him to do it for the roly polies. He is skeptic but thanks you for the advice. You throw in a piece of the dessert for good measure. Once you reach home, you're feeling very proud of yourself. Initially, you were planning on going straight to bed, but the interaction with the man reminded you that you should probably engage in those coping exercises as wekk.",
+            brainExplain: ""
+        }],     
+    },
+
+    {
+        id: "hisBirthday",
+        line: "Feeling guilty about your disastrous lie, you decide to stop by the local park. Watching the ducks swim in the pond always calms you down. However, your usual bench is occupied by the same man from the drive-thru. He's watching the ducks too, singing happy birthday to himself.",
+        choices: [{
+            text: "Sit next to him.",
+            nextStepID: "ending",
+            storyResult: "The man eyes you suspiciously as you occupy the empty seat on the bench next to him. He opens his mouth to say something but rethinks it. You quietly hand over a small piece of your dessert before watching the ducks in silence together.",
+            brainExplain: ""
+        }, {
+            text: "Find a new spot.",
+            nextStepID: "ending",
+            storyResult: "You decide to sit on the bench directly across from the man, because surely that's less awkward. The man freezes when he sees you before running away, terrified. He thought you'd chased him down from the drive-thru. Now, you can enjoy the ducks in peace.",
             brainExplain: ""
         }],     
     },
