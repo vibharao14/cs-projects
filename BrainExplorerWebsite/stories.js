@@ -65,7 +65,10 @@ const storySteps = [
             nextStepID: "guiltyDinner",
             storyResult: "You continue to eat without acknowledging the other patron. Other people stare at you eat, and you feel embarrassed. You didn't mean to cause a scene.",
             brainExplain: ""
-        }],     
+        }],
+        question: "If you are a highly logical person, is the prefrontal cortex the most important player in your brain during conflict or confrontation?",
+        answerChoices: ["No. Regardless of your personality, a variety of brain regions, such as the insula, ACC, and amygdala, can be involved in processing conflict", "Yes. The more logical you are, the more other parts of your brain tend to shrink or deactivate.", "Highly logical people never have conflict."],
+        correctAnswer: 0        
     },
     {
         id: "fightRecovery",
@@ -125,7 +128,10 @@ const storySteps = [
             nextStepID: "friendCall",
             storyResult: "You decide to call your brave friend, who also happens to be your neighbor. They come to your front door to check out the commotion. They inform you that it was simply a lost rabbit, which they managed to send back to a safer patch of grass.",
             brainExplain: ""
-        }],     
+        }],
+        question: "Why did the crash immediately catch your attention?",
+        answerChoices: ["The prefrontal cortex floods your body with adrenaline as soon as you detect the loud noise, causing your attention to narrow.", "Your brain detects startling sounds and quickly directs attention towards them so you can scan for potential threats", "Vestigial cortexes prioritize attention to anything that sounds like a meteor approaching."],
+        correctAnswer: 1       
     },
     {
         id: "checkCam",
@@ -170,7 +176,10 @@ const storySteps = [
             nextStepID: "salt",
             storyResult: "Unfortunately, the white substance you poured onto your tongue was salt, not sugar, as expected. You automatically spit it out and scramble for the sugar in the other container. Relief comes slowly but surely.",
             brainExplain: ""
-        }],     
+        }],
+        question: "Would you have reacted differently if you had been expecting that level of spice going in?",
+        answerChoices: ["Yes. If you had expected the spice, your brain would've been prepared and the physical pain would be slightly neutralized.", "No. The only factor involved in your reaction is the level of spice.", "Probably. Expectations can influence your perception of pain. Losing the surprise factor can allow your brain to reduce the initial panic response and make the physical sensation feel more manageable."],
+        correctAnswer: 2     
     },
     {
         id: "salt",
@@ -231,7 +240,10 @@ const storySteps = [
             nextStepID: "ending",
             storyResult: "You give the man your favorite tips for dealing with stress and tell him to do it for the roly polies. He is skeptic but thanks you for the advice. You throw in a piece of the dessert for good measure. Once you reach home, you're feeling very proud of yourself. Initially, you were planning on going straight to bed, but the interaction with the man reminded you that you should probably engage in those coping exercises as wekk.",
             brainExplain: ""
-        }],     
+        }], 
+        question: "What are mirror neurons?",
+        answerChoices: ["Brain cells that fire when you do an action or when you watch someone else perform an action", "Brain cells that identify your own reflection when you look at a reflective surface. They help with depth-perception and prevent you from thinking there are two of you", "They are neurons you inherit from people you spend significant time with"],
+        correctAnswer: 0         
     },
 
     {
@@ -247,7 +259,10 @@ const storySteps = [
             nextStepID: "ending",
             storyResult: "You decide to sit on the bench directly across from the man, because surely that's less awkward. The man freezes when he sees you before running away, terrified. He thought you'd chased him down from the drive-thru. Now, you can enjoy the ducks in peace.",
             brainExplain: ""
-        }],     
+        }],
+        question: "You put a lot of thought about how the man may react to your decision. What describes a group of brain regions that activate when people think about others' internal intentions and mental states?",
+        answerChoices: ["The Theory of Mind Network", "The Neural Mirroring Centers", "The Social Activation System"],
+        correctAnswer: 0  
     },
 
 ];
