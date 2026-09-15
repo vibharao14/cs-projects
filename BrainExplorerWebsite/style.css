@@ -90,3 +90,14 @@ body {
     width: auto;
     height: auto;
   }
+  .hideAnswers{
+    display: none;
+  }
+  .correctAnswerClicked{
+    background-color: darkgreen;
+    color: black;
+  }
+  .wrongAnswerClicked{
+    background-color: crimson;
+    color: black;
+  }

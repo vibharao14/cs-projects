@@ -3,7 +3,8 @@ const opt2Button = document.getElementById("option2");
 const storyResult = document.getElementById("storyResult");
 const currentLine = document.getElementById("currentLine");
 const brainExplain = document.getElementById("brainExplain");
-
+const question = document.getElementById("question");
+const answerChoices = document.getElementById("answerChoices");
 
 const storySteps = [
     {
@@ -267,13 +268,56 @@ const storySteps = [
 
 ];
 
+//function to add the multiple choice options to a quiz question
+function createAnswers(currentQ){
+    let index = 0;
+    //for each answer choice in the array of answer choices
+    currentQ.answerChoices.forEach(answer => {
+        //add buttons for each multiple choice option
+        const btn = document.createElement("button");
+        btn.innerText = answer;
+        //give answer feedback once the user selects a multiple choice option
+        if (index == currentQ.correctAnswer){
+            btn.addEventListener("click", function(){
+                btn.classList.add("correctAnswerClicked");
+                disableButtons();
+            });
+        } else {
+            btn.addEventListener("click", function(){
+                btn.classList.add("wrongAnswerClicked");
+                disableButtons();
+            });
+        }
+        answerChoices.appendChild(btn);
+        index +=1;
+    });
+};
+
+//disable every multiple choice question button from being clicked
+function disableButtons(){
+    const allButtons = answerChoices.querySelectorAll("button");
+    allButtons.forEach(btn =>{
+        btn.disabled = true;
+    });
+};
 function loadStep(){
     const currentStep = storySteps.find(step => step.id === currentStepID);
     storyResult.textContent = "";
     brainExplain.textContent = "";
+    question.textContent = "";
+    answerChoices.innerHTML = "";
+    answerChoices.classList.add("hideAnswers");
+
     opt1Button.textContent = currentStep.choices[0].text;
     opt2Button.textContent = currentStep.choices[1].text;
     currentLine.textContent = currentStep.line;
+
+    //if the current step comes with a quiz question, show the question and generate the multiple choice answers.
+    if (currentStep.question){
+        question.textContent = currentStep.question;
+        answerChoices.classList.remove("hideAnswers");
+        createAnswers(currentStep);
+    };
 };
 
 //Initialize the story
@@ -303,3 +347,4 @@ opt2Button.addEventListener("click", function(){
 nextButton.addEventListener("click", function(){
     loadStep();
 });
+
