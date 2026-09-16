@@ -47,6 +47,7 @@ body {
     background-color: coral;
     padding: 16px;
     font-size: 16px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
 }
@@ -60,15 +61,16 @@ body {
 
 }
 .dropdown-content button {
-    color: black;
-    background-color: transparent;
+    color: white;
+    background-color: #b52362;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
   
   .dropdown-content button:hover {
-    background-color: #f1f1f1;
+    background-color: rgb(238, 201, 188);
+    color: black;
   }
   
   .dropdown:hover .dropdown-content {
@@ -90,14 +92,73 @@ body {
     width: auto;
     height: auto;
   }
-  .hideAnswers{
+  #answerChoices.hideAnswers{
     display: none;
   }
-  .correctAnswerClicked{
+  #answerChoices button.correctAnswerClicked {
     background-color: darkgreen;
     color: black;
   }
-  .wrongAnswerClicked{
+  #answerChoices button.wrongAnswerClicked{
     background-color: crimson;
     color: black;
   }
+
+  #answerChoices{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(238, 201, 188);
+    align-items: center;
+    padding: 5px;
+  }
+
+  #answerChoices button {
+    width: 80%;
+    padding: 12px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #df77a4;
+    border: 2px;
+    color: white;
+    border-radius: 8px;
+} 
+
+#answerChoices button:hover:not(:disabled){
+  background-color: rgb(238, 201, 188);
+  color: black;
+}
+
+#next {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: coral;
+  color: white;
+}
+
+#next:hover {
+  background-color: #df77a4;
+}
+
+#option1,
+#option2 {
+    width: 80%;
+    padding: 14px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #b52362;
+    color: white;
+    border-radius: 8px;
+    border: 2px;
+}
+
+#option1:hover,
+#option2:hover {
+    background-color: rgb(238, 201, 188);
+    color: black;
+}
