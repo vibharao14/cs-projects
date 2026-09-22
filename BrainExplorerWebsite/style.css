@@ -1,8 +1,7 @@
 p{
-    color:blue;
-    background-color: blanchedalmond;
+    color:white;
     font-size: 20px;
-    font-style: italic;
+    line-height: 1.5;
 }
 ul{
   position: fixed;
@@ -92,7 +91,7 @@ body {
     width: auto;
     height: auto;
   }
-  #answerChoices.hideAnswers{
+  #quizSection.hideAnswers{
     display: none;
   }
   #answerChoices button.correctAnswerClicked {
@@ -107,10 +106,7 @@ body {
   #answerChoices{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    background-color: rgb(238, 201, 188);
     align-items: center;
-    padding: 5px;
   }
 
   #answerChoices button {
@@ -120,7 +116,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     background-color: #df77a4;
-    border: 2px;
+    border: 2px solid #b52362;
     color: white;
     border-radius: 8px;
 } 
@@ -154,11 +150,37 @@ body {
     background-color: #b52362;
     color: white;
     border-radius: 8px;
-    border: 2px;
+    border: 2px solid #b52362;
 }
 
 #option1:hover,
 #option2:hover {
     background-color: rgb(238, 201, 188);
     color: black;
+}
+
+#currentLine{
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+#storyResult{
+  max-width: 700px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+#quizSection{
+  width: 80%;
+  max-width: 700px;
+  padding: 20px;
+  background-color: rgb(238, 201, 188);
+  border: 2px solid #b52362;
+  border-radius: 12px;
+}
+
+#question{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
 }

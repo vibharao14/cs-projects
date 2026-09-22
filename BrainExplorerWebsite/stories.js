@@ -4,7 +4,7 @@ const storyResult = document.getElementById("storyResult");
 const currentLine = document.getElementById("currentLine");
 const question = document.getElementById("question");
 const answerChoices = document.getElementById("answerChoices");
-
+const quizSection = document.getElementById("quizSection");
 const storySteps = [
     {
         id: "start",
@@ -267,7 +267,7 @@ function loadStep(){
     storyResult.textContent = "";
     question.textContent = "";
     answerChoices.innerHTML = "";
-    answerChoices.classList.add("hideAnswers");
+    quizSection.classList.add("hideAnswers");
 
     opt1Button.textContent = currentStep.choices[0].text;
     opt2Button.textContent = currentStep.choices[1].text;
@@ -276,7 +276,7 @@ function loadStep(){
     //if the current step comes with a quiz question, show the question and generate the multiple choice answers.
     if (currentStep.question){
         question.textContent = currentStep.question;
-        answerChoices.classList.remove("hideAnswers");
+        quizSection.classList.remove("hideAnswers");
         createAnswers(currentStep);
     };
 };
