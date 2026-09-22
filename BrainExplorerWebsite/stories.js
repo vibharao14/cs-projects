@@ -237,26 +237,21 @@ const storySteps = [
 
 //function to add the multiple choice options to a quiz question
 function createAnswers(currentQ){
-    let index = 0;
     //for each answer choice in the array of answer choices
-    currentQ.answerChoices.forEach(answer => {
+    currentQ.answerChoices.forEach((answer, index)=> {
         //add buttons for each multiple choice option
         const btn = document.createElement("button");
         btn.innerText = answer;
         //give answer feedback once the user selects a multiple choice option
-        if (index == currentQ.correctAnswer){
-            btn.addEventListener("click", function(){
+        btn.addEventListener("click", function(){
+            if (index == currentQ.correctAnswer){
                 btn.classList.add("correctAnswerClicked");
-                disableButtons();
-            });
-        } else {
-            btn.addEventListener("click", function(){
+            } else{
                 btn.classList.add("wrongAnswerClicked");
+            }
                 disableButtons();
-            });
-        }
+        });
         answerChoices.appendChild(btn);
-        index +=1;
     });
 };
 
